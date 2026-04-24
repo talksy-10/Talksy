@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talksy</title>
+    <meta
+      name="description"
+      content="A playful German learning app for Indian learners with chapter exams, reminders, and Indian-language support."
+    />
+    <meta name="theme-color" content="#4b8f61" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">German for Indian learners</p>
+          <h1>Talksy</h1>
+          <p class="hero-text">
+            A playful little app that helps children and beginners in India
+            learn German step by step using familiar Indian languages.
+          </p>
+          <div class="controls-row">
+            <label class="selector-card" for="language-select">
+              <span class="selector-label">Choose your language</span>
+              <select id="language-select">
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+                <option value="bengali">Bengali</option>
+                <option value="tamil">Tamil</option>
+                <option value="telugu">Telugu</option>
+                <option value="marathi">Marathi</option>
+                <option value="malayalam">Malayalam</option>
+              </select>
+            </label>
+          </div>
+          <div class="hero-actions">
+            <a href="#lesson" class="button primary">Start lesson</a>
+            <button id="surprise-btn" class="button secondary" type="button">
+              Give me a random word
+            </button>
+          </div>
+          <div class="word-of-the-day" id="word-of-the-day" aria-live="polite"></div>
+        </div>
+        <section class="hero-card" aria-label="Learning focus">
+          <span class="card-tag">Today&apos;s focus</span>
+          <h2>Learn like a game</h2>
+          <ul>
+            <li>Small chapters</li>
+            <li>Simple exams</li>
+            <li>Support in Indian languages</li>
+          </ul>
+        </section>
+      </header>
+
+      <section class="panel reminder-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Daily reminder</p>
+          <h2>Come back and learn every day</h2>
+          <p class="hero-text chapter-description">
+            This web app can remind you daily. It cannot directly track Instagram usage, but it can gently remind you to pause scrolling and practice German.
+          </p>
+        </div>
+        <div class="reminder-grid">
+          <label class="selector-card" for="reminder-time">
+            <span class="selector-label">Reminder time</span>
+            <input id="reminder-time" type="time" value="18:00" />
+          </label>
+          <button id="save-reminder-btn" class="button primary" type="button">Save daily reminder</button>
+        </div>
+        <div id="reminder-status" class="quiz-result" aria-live="polite"></div>
+        <div id="focus-reminder" class="focus-reminder hidden" aria-live="polite"></div>
+        <div id="install-status" class="quiz-result" aria-live="polite"></div>
+      </section>
+
+      <section class="panel rewards-panel">
+        <div class="section-heading">
+          <p class="eyebrow">Progress and Rewards</p>
+          <h2>Earn your way through the course</h2>
+          <p class="hero-text chapter-description">
+            Finish chapter exams to earn XP, unlock cute rewards, and build up a full German roadmap from beginner to advanced.
+          </p>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-label">Chapters mastered</span>
+            <strong id="progress-count">0 / 0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">XP earned</span>
+            <strong id="xp-count">0 XP</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Rewards unlocked</span>
+            <strong id="reward-count">0</strong>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Mastery title</span>
+            <strong id="mastery-count">German Explorer</strong>
+          </article>
+        </div>
+        <div id="reward-banner" class="reward-banner hidden" aria-live="polite"></div>
+        <div id="reward-grid" class="reward-grid"></div>
+      </section>
+
+      <main>
+        <section class="panel" id="lesson">
+          <div class="section-heading">
+            <p class="eyebrow">Mini lesson</p>
+            <h2 id="chapter-title">Useful German for day one</h2>
+            <p id="chapter-description" class="hero-text chapter-description"></p>
+          </div>
+          <div class="chapter-progress" id="chapter-progress" aria-live="polite"></div>
+          <div class="lesson-grid" id="lesson-grid"></div>
+        </section>
+
+        <section class="panel practice-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Flashcards</p>
+            <h2>Tap to reveal the answer</h2>
+          </div>
+          <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-pressed="false">
+            <p class="flashcard-label">German</p>
+            <h3 id="flashcard-front"></h3>
+            <p id="flashcard-back" class="flashcard-answer hidden"></p>
+            <span class="flashcard-hint">Click to flip</span>
+          </div>
+          <div class="flashcard-actions">
+            <button id="speak-btn" class="button secondary" type="button">Hear pronunciation</button>
+            <button id="flip-btn" class="button secondary" type="button">Flip card</button>
+            <button id="next-btn" class="button primary" type="button">Next card</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Chapter exam</p>
+            <h2 id="exam-title">Check what you remember</h2>
+          </div>
+          <form id="quiz-form" class="quiz-form"></form>
+          <div id="quiz-result" class="quiz-result" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

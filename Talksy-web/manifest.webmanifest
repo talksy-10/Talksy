@@ -1,0 +1,17 @@
+{
+  "name": "Talksy",
+  "short_name": "Talksy",
+  "description": "A playful German learning app for Indian learners.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fdf4db",
+  "theme_color": "#4b8f61",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
